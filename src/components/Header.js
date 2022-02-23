@@ -29,5 +29,3 @@ Header.propTypes = {
 // }
 
 export default Header
-//changes has been made
-//asdasdasd
