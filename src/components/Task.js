@@ -13,3 +13,8 @@ const Task = ({task, onDelete,onToggle}) => {
 }//ask jh
 
 export default Task
+
+
+
+
+{`task ${task.reminder ? 'reminder' : ''}`}
