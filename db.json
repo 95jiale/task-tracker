@@ -16,13 +16,7 @@
       "id": 3,
       "text": " Dental appt",
       "day": "Feb 5th",
-      "reminder": true
-    },
-    {
-      "text": "Take test",
-      "day": "Friday morning 9am",
-      "reminder": true,
-      "id": 4
+      "reminder": false
     }
   ]
 }
