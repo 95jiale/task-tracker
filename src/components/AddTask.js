@@ -3,6 +3,7 @@ import { useState } from "react";
 function AddTask({ onAdd }) {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
+  const [color, setColor] = useState("Yellow");
   const [reminder, setReminder] = useState(false);
 
   const onSubmit = (e) => {
@@ -13,10 +14,11 @@ function AddTask({ onAdd }) {
       return;
     }
 
-    onAdd({ text, day, reminder });
+    onAdd({ text, day, reminder, color });
 
     setText("");
     setDay("");
+    setColor("");
     setReminder(false);
   };
   return (
@@ -43,6 +45,47 @@ function AddTask({ onAdd }) {
           ) => setDay(e.target.value)}
         />
       </div>
+      {/* ////last edited
+      <div className="form-control">
+      <label>Select Color</label>
+      <div className="radio">
+          <label>
+            <input
+              type="radio"
+              value="Red"
+              checked={this.state.selectedOption === "Red"}
+              onChange={this.onColorChange}
+            />
+            Red
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input
+              type="radio"
+              value="Blue"
+              checked={this.state.selectedOption === "Blue"}
+              onChange={this.onColorChange}
+            />
+            Blue
+          </label>
+        </div>
+        <div className="radio">
+          <label>
+            <input
+              type="radio"
+              value="Yellow"
+              checked={this.state.selectedOption === "Yellow"}
+              onChange={this.onColorChange}
+            />
+            Yellow
+          </label>
+        </div>
+        <div>
+          Selected option is : {this.state.selectedOption}
+        </div>
+      </div>
+      ///last edited */}
       <div className="form-control form-control-check">
         <label>Set Reminder</label>
         <input

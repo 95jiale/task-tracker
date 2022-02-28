@@ -20,12 +20,6 @@
       "day": "Feb 5th",
       "backgroundColor": "red",
       "reminder": false
-    },
-    {
-      "text": "asd",
-      "day": "asdas",
-      "reminder": true,
-      "id": 4
     }
   ]
 }
