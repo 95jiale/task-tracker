@@ -18,7 +18,7 @@ function AddTask({ onAdd }) {
 
     setText("");
     setDay("");
-    setColor("");
+    setColor("Yellow");
     setReminder(false);
   };
   return (
@@ -45,16 +45,16 @@ function AddTask({ onAdd }) {
           ) => setDay(e.target.value)}
         />
       </div>
-      {/* ////last edited
+
       <div className="form-control">
-      <label>Select Color</label>
-      <div className="radio">
+        <label>Select Color</label>
+        <div className="radio">
           <label>
             <input
               type="radio"
               value="Red"
-              checked={this.state.selectedOption === "Red"}
-              onChange={this.onColorChange}
+              checked={selectedOption === "Red"}
+              onChange={onColorChange}
             />
             Red
           </label>
@@ -64,8 +64,8 @@ function AddTask({ onAdd }) {
             <input
               type="radio"
               value="Blue"
-              checked={this.state.selectedOption === "Blue"}
-              onChange={this.onColorChange}
+              checked={selectedOption === "Blue"}
+              onChange={onColorChange}
             />
             Blue
           </label>
@@ -75,17 +75,15 @@ function AddTask({ onAdd }) {
             <input
               type="radio"
               value="Yellow"
-              checked={this.state.selectedOption === "Yellow"}
-              onChange={this.onColorChange}
+              checked={selectedOption === "Yellow"}
+              onChange={onColorChange}
             />
             Yellow
           </label>
         </div>
-        <div>
-          Selected option is : {this.state.selectedOption}
-        </div>
+        <div>Selected option is : {selectedOption}</div>
       </div>
-      ///last edited */}
+
       <div className="form-control form-control-check">
         <label>Set Reminder</label>
         <input
