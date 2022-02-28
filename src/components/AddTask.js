@@ -10,7 +10,6 @@ function AddTask({ onAdd }) {
     const target = e.target;
     if (target.checked) {
       setbackgroundColor(target.value);
-      console.log(backgroundColor);
     }
   };
 
