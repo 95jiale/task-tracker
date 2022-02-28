@@ -3,8 +3,16 @@ import { useState } from "react";
 function AddTask({ onAdd }) {
   const [text, setText] = useState("");
   const [day, setDay] = useState("");
-  const [color, setColor] = useState("Yellow");
+  const [backgroundColor, setbackgroundColor] = useState("Yellow");
   const [reminder, setReminder] = useState(false);
+
+  const handleChange = (e) => {
+    const target = e.target;
+    if (target.checked) {
+      setbackgroundColor(target.value);
+      console.log(backgroundColor);
+    }
+  };
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -14,11 +22,11 @@ function AddTask({ onAdd }) {
       return;
     }
 
-    onAdd({ text, day, reminder, color });
+    onAdd({ text, day, reminder, backgroundColor });
 
     setText("");
     setDay("");
-    setColor("Yellow");
+    setbackgroundColor("Yellow");
     setReminder(false);
   };
   return (
@@ -45,8 +53,36 @@ function AddTask({ onAdd }) {
           ) => setDay(e.target.value)}
         />
       </div>
-
       <div className="form-control">
+        <label>
+          <input
+            type="radio"
+            value="red"
+            checked={backgroundColor == "red"}
+            onChange={handleChange}
+          />
+          <span>Red</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="yellow"
+            checked={backgroundColor == "yellow"}
+            onChange={handleChange}
+          />
+          <span>Yellow</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="blue"
+            checked={backgroundColor == "blue"}
+            onChange={handleChange}
+          />
+          <span>Blue</span>
+        </label>
+      </div>
+      {/* <div className="form-control">
         <label>Select Color</label>
         <div className="radio">
           <label>
@@ -82,7 +118,7 @@ function AddTask({ onAdd }) {
           </label>
         </div>
         <div>Selected option is : {selectedOption}</div>
-      </div>
+      </div> */}
 
       <div className="form-control form-control-check">
         <label>Set Reminder</label>
